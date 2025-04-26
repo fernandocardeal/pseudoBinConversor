@@ -1,0 +1,21 @@
+procedimento principal()
+declaracoes
+	inteiro valor, pseudoBin
+	inteiro i, fator, bits[5]
+inicio
+	leia(valor)
+ 	para i <- 0 ate 4 passo 1 
+  		bits[i] <- valor & 1
+  		valor <- valor >> 1
+ 	fimpara
+ 	fator <- 1
+ 	para i <- 0 ate 4 passo 1
+  		se (bits[i] = 1) entao
+   			pseudoBin <- pseudoBin + fator
+  		fimse
+  		se (i < 4) entao
+   			fator <- (fator << 1) + (fator << 3)
+  		fimse
+	fimpara
+ escreva(pseudoBin)
+fim
